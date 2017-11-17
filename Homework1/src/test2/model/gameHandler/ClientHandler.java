@@ -1,4 +1,4 @@
-package test2;
+package test2.model.gameHandler;
 
 import java.io.*;
 import java.net.*;

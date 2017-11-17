@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test2;
+package test2.controller;
 
 import java.net.*;
 import java.io.*;
+import test2.model.gameHandler.ClientHandler;
 
 /**
  *
