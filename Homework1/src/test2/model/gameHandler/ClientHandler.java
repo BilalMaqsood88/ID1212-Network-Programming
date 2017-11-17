@@ -29,6 +29,9 @@ public class ClientHandler extends Thread{
 	try {
 	    System.out.println("Welcome user " + cno);
             //Initialize dictionary
+            String start = "y";
+            while (start.equalsIgnoreCase("y"))
+            {            
             initializeStreams();
             String word = pickword();
             System.out.print("word is:");
@@ -102,8 +105,8 @@ public class ClientHandler extends Thread{
                     {if (WinStatus == wordLength)
                        {   
                       
-                      SendDataToClient(s,joinWord + "\n *****You have WON the Game****");
-                      s.close();
+                      SendDataToClient(s,joinWord + "\n *****You have WON the Game****\n Write 'y' to continue and 'quit' to Quit game");
+                      //s.close();
                       break;
                     
                        }
@@ -120,8 +123,8 @@ public class ClientHandler extends Thread{
                       NumberOfAttempts--;             
                       if(NumberOfAttempts == 0){                  
                       joinWord = String.valueOf(guessedLetters);                    
-                      SendDataToClient(s,"***you have LOOSE the game***");
-                      s.close();
+                      SendDataToClient(s,"***you have LOOSE the game*** \n Write 'y' to continue and 'quit' to Quit game");
+                     // s.close();
                       break;
                       //System.exit(0);
                       }     
@@ -133,6 +136,8 @@ public class ClientHandler extends Thread{
                     }
                 }
             }
+            start = ReadFileFromClient(s);
+        }
         }
 	catch (Exception e) {
 	    System.err.println("Error here " +e);
