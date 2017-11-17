@@ -17,7 +17,7 @@ public class MultithreadedClient {
      */
     public static void main(String[] args) throws Exception {
         Socket cs = new Socket("localhost",9999);
-       BufferedReader br = new BufferedReader(new InputStreamReader(cs.getInputStream()));
+      BufferedReader br = new BufferedReader(new InputStreamReader(cs.getInputStream()));
        OutputStreamWriter os = new OutputStreamWriter(cs.getOutputStream());
         
         new ReceiveDataFromServer(cs).start();
