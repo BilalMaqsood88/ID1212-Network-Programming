@@ -11,7 +11,7 @@ import test2.model.gameHandler.ClientHandler;
 
 /**
  *
- * @author Tania Ijaz
+ * @author acer
  */
 public class Server {
     
